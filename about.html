@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Umid — Frontend Developer</title>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='44' y2='44' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%231e90ff'/%3E%3Cstop offset='100%25' stop-color='%234da6ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='44' height='44' rx='12' fill='url(%23g)'/%3E%3Cpolyline points='14,13 8,22 14,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpolyline points='30,13 36,22 30,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='26' y1='12' x2='18' y2='32' stroke='rgba(255,255,255,0.75)' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <meta name="description"
+    content="Learn more about Umid — a passionate Frontend Developer specializing in React, JavaScript, HTML & CSS.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e90ff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/about.css">
+</head>
+
+<!-- Premium UI Elements -->
+<div class="loader-wrapper" id="loader">
+  <div class="loader"></div>
+</div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-outline" id="cursor-outline"></div>
+
+<div class="bg-slideshow" id="bg-slideshow"></div>
+<div class="bg-overlay"></div>
+<div class="noise-overlay"></div>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo" id="site-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1e90ff" />
+              <stop offset="100%" stop-color="#4da6ff" />
+            </linearGradient>
+          </defs>
+          <rect width="44" height="44" rx="12" fill="url(#logoGrad)" />
+          <polyline points="14,13 8,22 14,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <polyline points="30,13 36,22 30,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <line x1="26" y1="12" x2="18" y2="32" stroke="rgba(255,255,255,0.75)" stroke-width="2.4"
+            stroke-linecap="round" />
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="about.html" class="active" data-i18n="about">About Me</a>
+        <a href="portfolio.html" data-i18n="portfolio">Portfolio</a>
+        <a href="contact.html" data-i18n="contact">Contact Me</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn active" data-lang="en">EN</span>
+          <span class="lang-btn" data-lang="ru">RU</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">
+          <i data-lucide="sun" id="sun-icon"></i>
+          <i data-lucide="moon" id="moon-icon" style="display: none;"></i>
+        </button>
+
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="mobile-menu" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo">
+      <span class="logo-text">Umid.</span>
+    </a>
+    <button id="mobile-menu-close" class="mobile-menu-close">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Me</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact Me</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ═══════════ ABOUT HERO ═══════════ -->
+  <section class="container about-hero">
+    <div class="about-image-col animate-up">
+      <div class="hero-image-wrapper">
+        <img src="images/profile.jpg" alt="Umid — Frontend Developer">
+      </div>
+    </div>
+
+    <div class="about-content-col animate-up" style="transition-delay: 0.15s;">
+      <div class="badge">
+        <span data-i18n="about_hero_badge">About Me 👨‍💻</span>
+      </div>
+      <h1 data-i18n="about_hero_title">I'm Umid — <span class="accent">Junior</span> Frontend Developer</h1>
+      <p class="about-lead" data-i18n="about_hero_lead">A passionate Junior Frontend Developer who started his journey
+        in 2024. I love building
+        clean, responsive, and visually appealing websites. I'm constantly learning new technologies and improving my
+        skills — from mastering HTML, CSS & JavaScript to diving deeper into React and modern web tooling. I'm eager
+        to grow, take on real-world projects, and become a top-level developer.</p>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="stat-num">10<span class="accent">+</span></span>
+          <span class="stat-lbl" data-i18n="stat_projects">Completed Projects</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">5<span class="accent">+</span></span>
+          <span class="stat-lbl" data-i18n="stat_clients">Happy Clients</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">1<span class="accent">+</span></span>
+          <span class="stat-lbl" data-i18n="stat_experience">Year of Experience</span>
+        </div>
+      </div>
+
+      <div class="about-actions">
+        <a href="index.html#portfolio" class="btn-primary" data-i18n="hero_btn_portfolio">
+          View Portfolio <i data-lucide="arrow-right"></i>
+        </a>
+        <a href="mailto:umidjon9571@gmail.com" class="btn-outline">
+          <i data-lucide="mail"></i> <span data-i18n="hire_me">Hire Me</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TECH STACK ═══════════ -->
+  <section class="container tech-section">
+    <h2 class="animate-up" data-i18n="tech_stack_title">Tech Stack</h2>
+    <p class="section-subtitle animate-up" data-i18n="tech_stack_subtitle">Technologies I use to bring ideas to life</p>
+    <div class="tech-grid">
+      <div class="tech-card animate-up" style="transition-delay: 0.05s;">
+        <div class="tech-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+        </div>
+        <span>HTML5</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.1s;">
+        <div class="tech-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+        </div>
+        <span>CSS3</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.15s;">
+        <div class="tech-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript">
+        </div>
+        <span>JavaScript</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.2s;">
+        <div class="tech-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+        </div>
+        <span>React</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.25s;">
+        <div class="tech-icon">
+          <img src="https://www.svgrepo.com/show/374118/tailwind.svg" alt="Tailwind CSS">
+        </div>
+        <span>Tailwind CSS</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.3s;">
+        <div class="tech-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+        </div>
+        <span>Git & GitHub</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.35s;">
+        <div class="tech-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite">
+        </div>
+        <span>Vite</span>
+      </div>
+      <div class="tech-card animate-up" style="transition-delay: 0.4s;">
+        <div class="tech-icon">
+          <i data-lucide="smartphone"></i>
+        </div>
+        <span>Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EXPERIENCE TIMELINE ═══════════ -->
+  <section class="container experience-section">
+    <h2 class="animate-up" data-i18n="experience_title">Experience</h2>
+    <p class="section-subtitle animate-up" data-i18n="experience_subtitle">My professional journey so far</p>
+    <div class="timeline">
+      <div class="timeline-item animate-up" style="transition-delay: 0.1s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">2024 — Present</span>
+          <h3 data-i18n="exp_1_title">Junior Frontend Developer</h3>
+          <p data-i18n="exp_1_desc">Started my frontend development journey in 2024. Building responsive websites and
+            web apps using HTML5,
+            CSS3, JavaScript and React. Focused on writing clean, maintainable code and continuously improving through
+            personal projects, online courses, and real-world client work.</p>
+        </div>
+      </div>
+      <div class="timeline-item animate-up" style="transition-delay: 0.2s;">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">2024</span>
+          <h3 data-i18n="exp_2_title">Self-Learning & Bootcamp</h3>
+          <p data-i18n="exp_2_desc">Completed intensive frontend development training covering HTML, CSS, JavaScript,
+            and React fundamentals.
+            Built 10+ projects ranging from landing pages to interactive web apps to solidify practical skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PERSONAL INFO ═══════════ -->
+  <section class="container personal-section">
+    <h2 class="animate-up" data-i18n="personal_info_title">Personal Info</h2>
+    <p class="section-subtitle animate-up" data-i18n="personal_info_subtitle">A few more things about me</p>
+    <div class="personal-grid">
+      <div class="personal-card animate-up" style="transition-delay: 0.1s;">
+        <div class="personal-icon"><i data-lucide="map-pin"></i></div>
+        <div>
+          <span class="personal-label" data-i18n="label_location">Location</span>
+          <span class="personal-value">Samarkand, Uzbekistan</span>
+        </div>
+      </div>
+      <div class="personal-card animate-up" style="transition-delay: 0.15s;">
+        <div class="personal-icon"><i data-lucide="mail"></i></div>
+        <div>
+          <span class="personal-label" data-i18n="label_email">Email</span>
+          <a href="mailto:umidjon9571@gmail.com" class="personal-value">umidjon9571@gmail.com</a>
+        </div>
+      </div>
+      <div class="personal-card animate-up" style="transition-delay: 0.2s;">
+        <div class="personal-icon"><i data-lucide="phone"></i></div>
+        <div>
+          <span class="personal-label" data-i18n="label_phone">Phone</span>
+          <a href="tel:+998882861839" class="personal-value">+998 88 286 1839</a>
+        </div>
+      </div>
+      <div class="personal-card animate-up" style="transition-delay: 0.22s;">
+        <div class="personal-icon"><i data-lucide="linkedin"></i></div>
+        <div>
+          <span class="personal-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/umid-ochilov-8169ba395/" target="_blank" class="personal-value">Umid
+            Ochilov</a>
+        </div>
+      </div>
+      <div class="personal-card animate-up" style="transition-delay: 0.25s;">
+        <div class="personal-icon"><i data-lucide="briefcase"></i></div>
+        <div>
+          <span class="personal-label">Status</span>
+          <span class="personal-value available">Available for work</span>
+        </div>
+      </div>
+      <div class="personal-card animate-up" style="transition-delay: 0.3s;">
+        <div class="personal-icon"><i data-lucide="languages"></i></div>
+        <div>
+          <span class="personal-label">Languages</span>
+          <span class="personal-value">Uzbek, Russian, English</span>
+        </div>
+      </div>
+      <div class="personal-card animate-up" style="transition-delay: 0.35s;">
+        <div class="personal-icon"><i data-lucide="graduation-cap"></i></div>
+        <div>
+          <span class="personal-label">Education</span>
+          <span class="personal-value">Computer Science, B.Sc.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="contact" class="footer">
+  <div class="container footer-content">
+    <div class="footer-left">
+      <h3>Umid.</h3>
+      <p data-i18n="footer_p">Clean and minimal portfolio with modern design and smooth interactions.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <div class="contact-item">
+        <i data-lucide="mail"></i>
+        <a href="mailto:umidjon9571@gmail.com">umidjon9571@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i data-lucide="phone"></i>
+        <a href="tel:+998882861839">+998 88 286 1839</a>
+      </div>
+      <div class="contact-item">
+        <i data-lucide="map-pin"></i>
+        <span>Samarkand, Uzbekistan</span>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/umidjon88" target="_blank" aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/umid-ochilov-8169ba395/" target="_blank" aria-label="LinkedIn">
+        <i data-lucide="linkedin"></i>
+      </a>
+      <a href="https://t.me/HEMI_power" target="_blank" aria-label="Telegram">
+        <i data-lucide="send"></i>
+      </a>
+      <a href="https://instagram.com/um1d.abv" target="_blank" aria-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Umid. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top">
+  <i data-lucide="arrow-up"></i>
+</button>
+
+<script src="js/translations.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/about.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Umid — Frontend Developer</title>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='44' y2='44' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%231e90ff'/%3E%3Cstop offset='100%25' stop-color='%234da6ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='44' height='44' rx='12' fill='url(%23g)'/%3E%3Cpolyline points='14,13 8,22 14,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpolyline points='30,13 36,22 30,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='26' y1='12' x2='18' y2='32' stroke='rgba(255,255,255,0.75)' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <meta name="description"
+    content="Explore Umid's creative portfolio of frontend projects. Modern designs and efficient code.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+
+<!-- Premium UI Elements -->
+<div class="loader-wrapper" id="loader">
+  <div class="loader"></div>
+</div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-outline" id="cursor-outline"></div>
+
+<div class="bg-slideshow" id="bg-slideshow"></div>
+<div class="bg-overlay"></div>
+<div class="noise-overlay"></div>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo" id="site-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1e90ff" />
+              <stop offset="100%" stop-color="#4da6ff" />
+            </linearGradient>
+          </defs>
+          <rect width="44" height="44" rx="12" fill="url(#logoGrad)" />
+          <polyline points="14,13 8,22 14,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <polyline points="30,13 36,22 30,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <line x1="26" y1="12" x2="18" y2="32" stroke="rgba(255,255,255,0.75)" stroke-width="2.4"
+            stroke-linecap="round" />
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="about.html" data-i18n="about">About Me</a>
+        <a href="portfolio.html" class="active" data-i18n="portfolio">Portfolio</a>
+        <a href="contact.html" data-i18n="contact">Contact Me</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn active" data-lang="en">EN</span>
+          <span class="lang-btn" data-lang="ru">RU</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">
+          <i data-lucide="sun" id="sun-icon"></i>
+          <i data-lucide="moon" id="moon-icon" style="display: none;"></i>
+        </button>
+
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="mobile-menu" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo">
+      <span class="logo-text">Umid.</span>
+    </a>
+    <button id="mobile-menu-close" class="mobile-menu-close">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <div class="mobile-links">
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="about.html" data-i18n="about">About Me</a>
+    <a href="portfolio.html" class="active" data-i18n="portfolio">Portfolio</a>
+    <a href="contact.html" data-i18n="contact">Contact Me</a>
+  </div>
+</div>
+
+<main class="portfolio-page">
+  <section class="container hero-portfolio animate-up">
+    <div class="portfolio-header-card">
+      <div class="header-icon">
+        <i data-lucide="sparkles"></i>
+      </div>
+      <h1 data-i18n="portfolio_title">My Creative Portfolios</h1>
+      <p data-i18n="portfolio_subtitle">Here's what some of my projects say about my journey as a developer</p>
+
+      <div class="portfolio-stats-row">
+        <div class="p-stat">
+          <i data-lucide="check-circle-2"></i>
+          <span data-i18n="stat_projects">10+ Completed Projects</span>
+        </div>
+        <div class="p-stat">
+          <i data-lucide="users-2"></i>
+          <span data-i18n="stat_clients">5+ Happy Clients</span>
+        </div>
+        <div class="p-stat">
+          <i data-lucide="bar-chart-3"></i>
+          <span data-i18n="stat_experience">1+ Year of Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT WORKS (FROM HOME) -->
+  <section id="recent-works" class="container portfolio-section" style="padding: 60px 0;">
+    <h2 class="animate-up" data-i18n="portfolio_title" style="text-align: center; margin-bottom: 20px;">My Works</h2>
+    <p class="animate-up" data-i18n="portfolio_subtitle" style="text-align: center; margin-bottom: 40px;">A collection
+      of projects showcasing my journey and skills in web development</p>
+    <div class="portfolio-grid">
+      <!-- 1. Interactive Calculator (Simple) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.1s;">
+        <div class="portfolio-image">
+          <img src="images/project2.jpg" alt="Simple Calculator">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">1.</span>
+          <h3 data-i18n="project_2_title">Interactive Calculator</h3>
+          <p data-i18n="project_2_desc">Clean and functional calculator app built with vanilla JavaScript.</p>
+          <a href="https://umidjon88.github.io/just-a-simple-calculator/" target="_blank" class="portfolio-link"
+            data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Frontend Developer Portfolio (Medium) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.2s;">
+        <div class="portfolio-image">
+          <img src="images/project3.jpg" alt="Portfolio Website">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">2.</span>
+          <h3 data-i18n="project_3_title">Frontend Developer Portfolio</h3>
+          <p data-i18n="project_3_desc">Responsive portfolio website showcasing frontend development skills and
+            projects.</p>
+          <a href="https://umidjonfdev.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Mr.Hope Professional Portfolio (Medium) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.3s;">
+        <div class="portfolio-image">
+          <img src="images/project4.jpg" alt="Mr.Hope Portfolio">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">3.</span>
+          <h3 data-i18n="project_4_title">Mr.Hope Professional Portfolio</h3>
+          <p data-i18n="project_4_desc">Clean and minimal portfolio with modern design and smooth interactions.</p>
+          <a href="https://umidjon88v1.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Stroydom Construction (Medium/Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.4s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop"
+            alt="Stroydom">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">4.</span>
+          <h3 data-i18n="project_6_title">Stroydom Construction</h3>
+          <p data-i18n="project_6_desc">Professional landing page for a construction company.</p>
+          <a href="https://stroydom-24.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. About Earth Education (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.5s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+            alt="About Earth">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">5.</span>
+          <h3 data-i18n="project_7_title">About Earth Education</h3>
+          <p data-i18n="project_7_desc">Interactive educational platform about our planet.</p>
+          <a href="https://about-earth.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. YouTube Media Clone (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.6s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop"
+            alt="YouTube Clone">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">6.</span>
+          <h3 data-i18n="project_8_title">YouTube Media Clone</h3>
+          <p data-i18n="project_8_desc">A high-performance media platform clone featuring video playback, real-time
+            search, and a responsive interface.</p>
+          <a href="https://smallclone-youtube.netlify.app/" target="_blank" class="portfolio-link"
+            data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. CosmicShop E-commerce (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.7s;">
+        <div class="portfolio-image">
+          <img src="images/project1.jpg" alt="CosmicShop E-commerce">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">7.</span>
+          <h3 data-i18n="project_1_title">CosmicShop E-commerce</h3>
+          <p data-i18n="project_1_desc">Premium online store with immersive shopping experience and modern UI design.
+          </p>
+          <a href="https://umidjon88v1.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 8. ShopVibe E-commerce (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.8s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop"
+            alt="ShopVibe">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">8.</span>
+          <h3 data-i18n="project_5_title">ShopVibe E-commerce</h3>
+          <p data-i18n="project_5_desc">A premium online clothing store featuring real-time filtering and search.</p>
+          <a href="https://shopvibebyumid.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+  <section class="container projects-section">
+    <div class="section-header animate-up">
+      <h2 data-i18n="projects_2024_title">Projects Done in 2024</h2>
+      <div class="carousel-btns">
+        <button class="c-btn"><i data-lucide="chevron-left"></i></button>
+        <button class="c-btn"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-detailed-card animate-up" style="transition-delay: 0.1s;">
+        <div class="project-info-top">
+          <h3>Z - Aura Perfume Website Design</h3>
+        </div>
+        <div class="main-project-img">
+          <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1000&auto=format&fit=crop"
+            alt="Aura Perfume">
+          <div class="img-arrow">
+            <i data-lucide="arrow-up-right"></i>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1615484477778-ca3b77940c25?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+        </div>
+      </div>
+
+      <div class="project-detailed-card animate-up" style="transition-delay: 0.2s;">
+        <div class="project-info-top">
+          <h3>Forhelp Charity Website Design</h3>
+        </div>
+        <div class="main-project-img">
+          <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb8?q=80&w=1000&auto=format&fit=crop"
+            alt="Charity">
+          <div class="img-arrow">
+            <i data-lucide="arrow-up-right"></i>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+        </div>
+      </div>
+
+      <div class="project-detailed-card animate-up" style="transition-delay: 0.3s;">
+        <div class="project-info-top">
+          <h3>Skill Bridge Website Design</h3>
+        </div>
+        <div class="main-project-img">
+          <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1000&auto=format&fit=crop"
+            alt="Education">
+          <div class="img-arrow">
+            <i data-lucide="arrow-up-right"></i>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=200&auto=format&fit=crop"
+            alt="thumb">
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-left">
+      <h3>Umid.</h3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <div class="contact-item">
+        <i data-lucide="mail"></i>
+        <a href="mailto:umidjon9571@gmail.com">umidjon9571@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i data-lucide="phone"></i>
+        <a href="tel:+998882861839">+998 88 286 1839</a>
+      </div>
+      <div class="contact-item">
+        <i data-lucide="map-pin"></i>
+        <span>Samarkand, Uzbekistan</span>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/umidjon88" target="_blank" aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/umid-ochilov-8169ba395/" target="_blank" aria-label="LinkedIn">
+        <i data-lucide="linkedin"></i>
+      </a>
+      <a href="https://t.me/HEMI_power" target="_blank" aria-label="Telegram">
+        <i data-lucide="send"></i>
+      </a>
+      <a href="https://instagram.com/um1d.abv" target="_blank" aria-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Umid. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top">
+  <i data-lucide="arrow-up"></i>
+</button>
+
+<script src="js/translations.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/portfolio.js"></script>
+</body>
+
+</html>

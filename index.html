@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Umid — Frontend Developer</title>
+
+  <!-- ═══════════════════════════════════════
+       FAVICON
+  ═══════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='44' y2='44' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%231e90ff'/%3E%3Cstop offset='100%25' stop-color='%234da6ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='44' height='44' rx='12' fill='url(%23g)'/%3E%3Cpolyline points='14,13 8,22 14,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpolyline points='30,13 36,22 30,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='26' y1='12' x2='18' y2='32' stroke='rgba(255,255,255,0.75)' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- ═══════════════════════════════════════
+       PRIMARY SEO
+  ═══════════════════════════════════════ -->
+  <meta name="description"
+    content="Umid — Frontend Developer specializing in clean code, responsive design, and modern web experiences. Explore my portfolio of React, JavaScript, HTML & CSS projects.">
+  <meta name="keywords"
+    content="frontend developer, web developer, React, JavaScript, HTML, CSS, portfolio, UI developer, responsive design, Umid">
+  <meta name="author" content="Umid">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e90ff">
+  <link rel="canonical" href="https://umidjonfdev.netlify.app/">
+
+  <!-- ═══════════════════════════════════════
+       OPEN GRAPH — Facebook · LinkedIn · WhatsApp · Telegram
+  ═══════════════════════════════════════ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://umidjonfdev.netlify.app/">
+  <meta property="og:title" content="Umid — Frontend Developer Portfolio">
+  <meta property="og:description"
+    content="Passionate Frontend Developer building fast, responsive, and beautiful web apps. Check out my latest projects.">
+  <meta property="og:image" content="https://umidjonfdev.netlify.app/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Umid — Frontend Developer Portfolio">
+  <meta property="og:site_name" content="Umid Portfolio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ═══════════════════════════════════════
+       TWITTER / X CARD
+  ═══════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://umidjonfdev.netlify.app/">
+  <meta name="twitter:title" content="Umid — Frontend Developer Portfolio">
+  <meta name="twitter:description"
+    content="Passionate Frontend Developer building fast, responsive, and beautiful web apps. Check out my latest projects.">
+  <meta name="twitter:image" content="https://umidjonfdev.netlify.app/images/og-image.png">
+  <meta name="twitter:image:alt" content="Umid — Frontend Developer Portfolio">
+  <meta name="twitter:creator" content="@umidjon88">
+  <meta name="twitter:site" content="@umidjon88">
+
+  <!-- ═══════════════════════════════════════
+       STRUCTURED DATA — JSON-LD (Google · Bing)
+  ═══════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Umid",
+    "url": "https://umidjonfdev.netlify.app/",
+    "image": "https://umidjonfdev.netlify.app/profile.jpg",
+    "jobTitle": "Frontend Developer",
+    "description": "Passionate Frontend Developer specializing in React, JavaScript, HTML, and CSS.",
+    "email": "umidjon9571@gmail.com",
+    "telephone": "+998882861839",
+    "sameAs": [
+      "https://github.com/umidjon88",
+      "https://www.linkedin.com/in/umid-ochilov-8169ba395/",
+      "https://t.me/HEMI_power",
+      "https://instagram.com/um1d.abv"
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════
+       GOOGLE FONTS & ICONS
+  ═══════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<!-- Premium UI Elements -->
+<div class="loader-wrapper" id="loader">
+  <div class="loader"></div>
+</div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-outline" id="cursor-outline"></div>
+
+<div class="bg-slideshow" id="bg-slideshow"></div>
+<div class="bg-overlay"></div>
+<div class="noise-overlay"></div>
+
+<!-- Premium Test Alert Modal -->
+<div class="test-alert-overlay" id="testAlert">
+  <div class="test-alert-modal">
+    <div class="test-alert-icon">
+      <i data-lucide="info" size="32"></i>
+    </div>
+    <h2 data-i18n="alert_title">Premium Design (Beta)</h2>
+    <p data-i18n="alert_desc">This is a concept version of the portfolio. Currently, it is under testing and the
+      design/content may not be final.</p>
+    <div class="alert-actions">
+      <button class="alert-close-btn" id="closeAlert" data-i18n="alert_btn">Got it!</button>
+      <a href="contact.html?reason=feedback" class="alert-feedback-btn" data-i18n="alert_feedback">Suggest
+        Improvements</a>
+    </div>
+  </div>
+</div>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo" id="site-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1e90ff" />
+              <stop offset="100%" stop-color="#4da6ff" />
+            </linearGradient>
+          </defs>
+          <!-- Background rounded square -->
+          <rect width="44" height="44" rx="12" fill="url(#logoGrad)" />
+          <!-- Left bracket < -->
+          <polyline points="14,13 8,22 14,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <!-- Right bracket > -->
+          <polyline points="30,13 36,22 30,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <!-- Slash / -->
+          <line x1="26" y1="12" x2="18" y2="32" stroke="rgba(255,255,255,0.75)" stroke-width="2.4"
+            stroke-linecap="round" />
+        </svg>
+
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active" data-i18n="home">Home</a>
+        <a href="about.html" data-i18n="about">About Me</a>
+        <a href="portfolio.html" data-i18n="portfolio">Portfolio</a>
+        <a href="contact.html" data-i18n="contact">Contact Me</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn active" data-lang="en">EN</span>
+          <span class="lang-btn" data-lang="ru">RU</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">
+          <i data-lucide="sun" id="sun-icon"></i>
+          <i data-lucide="moon" id="moon-icon" style="display: none;"></i>
+        </button>
+
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="mobile-menu" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo">
+      <span class="logo-text">Umid.</span>
+    </a>
+    <button id="mobile-menu-close" class="mobile-menu-close">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <div class="mobile-links">
+    <a href="index.html" class="active" data-i18n="home">Home</a>
+    <a href="about.html" data-i18n="about">About Me</a>
+    <a href="portfolio.html" data-i18n="portfolio">Portfolio</a>
+    <a href="contact.html" data-i18n="contact">Contact Me</a>
+  </div>
+</div>
+
+<main>
+  <section id="home" class="container hero">
+    <div class="hero-content animate-up">
+      <div class="badge">
+        <span data-i18n="hero_badge">Hello There 👋</span>
+      </div>
+      <h1><span data-i18n="hero_title_left">Mr. Hope's </span><span class="animated-gradient"
+          data-i18n="hero_title_accent">WebCraft</span><span data-i18n="hero_title_right"> Welcomes You!</span></h1>
+      <p data-i18n="hero_desc">I am a passionate <strong>Junior Frontend Developer</strong> who started his journey in
+        2024, dedicated to
+        building clean, responsive, and visually stunning websites. Explore my portfolio to see what I've built so far.
+      </p>
+
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn-primary" data-i18n="hero_btn_portfolio">
+          View Portfolio <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="stats-card">
+        <div class="stat-item">
+          <div class="stat-number">10<span>+</span></div>
+          <div class="stat-label" data-i18n="stat_projects">Completed Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5<span>+</span></div>
+          <div class="stat-label" data-i18n="stat_clients">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1<span>+</span></div>
+          <div class="stat-label" data-i18n="stat_experience">Year of Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-container animate-up" style="animation-delay: 0.2s;">
+      <div class="hero-image-wrapper">
+        <img src="images/profile.jpg" alt="Mr. Hope Profile">
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="container skills-section">
+    <h2 class="animate-up" data-i18n="skills_title">My Skills</h2>
+    <p class="animate-up" data-i18n="skills_subtitle">Technologies and skills I've been actively learning and building
+      with since 2024</p>
+    <div class="skills-grid">
+      <div class="skill-card animate-up" style="animation-delay: 0.1s;">
+        <div class="skill-icon-wrapper">
+          <i data-lucide="code"></i>
+        </div>
+        <h3 data-i18n="skill_1_title">Semantic HTML & SEO</h3>
+        <p data-i18n="skill_1_desc">Writing clean, accessible, and search-engine-friendly markup that provides a solid
+          foundation for every web
+          project I build.</p>
+      </div>
+      <div class="skill-card animate-up" style="animation-delay: 0.2s;">
+        <div class="skill-icon-wrapper">
+          <i data-lucide="brush"></i>
+        </div>
+        <h3 data-i18n="skill_2_title">Modern CSS & Layouts</h3>
+        <p data-i18n="skill_2_desc">Proficient in Flexbox, CSS Grid, and modern styling techniques to create
+          pixel-perfect, visually engaging
+          user interfaces.</p>
+      </div>
+      <div class="skill-card animate-up" style="animation-delay: 0.3s;">
+        <div class="skill-icon-wrapper">
+          <i data-lucide="blocks"></i>
+        </div>
+        <h3 data-i18n="skill_3_title">JavaScript (ES6+)</h3>
+        <p data-i18n="skill_3_desc">Expertise in core JS concepts, DOM manipulation, and asynchronous programming to
+          build interactive and
+          dynamic features.</p>
+      </div>
+      <div class="skill-card animate-up" style="animation-delay: 0.4s;">
+        <div class="skill-icon-wrapper">
+          <i data-lucide="atom"></i>
+        </div>
+        <h3 data-i18n="skill_4_title">React.js Framework</h3>
+        <p data-i18n="skill_4_desc">Building scalable and reusable component-based applications using the latest
+          features and state management
+          patterns in React.</p>
+      </div>
+      <div class="skill-card animate-up" style="animation-delay: 0.5s;">
+        <div class="skill-icon-wrapper">
+          <i data-lucide="git-branch"></i>
+        </div>
+        <h3 data-i18n="skill_5_title">Version Control (Git)</h3>
+        <p data-i18n="skill_5_desc">Maintaining clean code history and collaborating effectively using Git and GitHub
+          for professional workflow
+          management.</p>
+      </div>
+      <div class="skill-card animate-up" style="animation-delay: 0.6s;">
+        <div class="skill-icon-wrapper">
+          <i data-lucide="smartphone"></i>
+        </div>
+        <h3 data-i18n="skill_6_title">Responsive Development</h3>
+        <p data-i18n="skill_6_desc">Ensuring seamless functionality and aesthetics across all devices, from mobile
+          screens to large desktop
+          monitors.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="container portfolio-section">
+    <h2 class="animate-up" data-i18n="portfolio_title">My Works</h2>
+    <p class="animate-up" data-i18n="portfolio_subtitle">Here's what some of my clients have to say about my web design
+      work</p>
+    <div class="portfolio-grid">
+      <!-- 1. Interactive Calculator (Simple) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.1s;">
+        <div class="portfolio-image">
+          <img src="images/project2.jpg" alt="Simple Calculator">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">1.</span>
+          <h3 data-i18n="project_2_title">Interactive Calculator</h3>
+          <p data-i18n="project_2_desc">Clean and functional calculator app built with vanilla JavaScript.</p>
+          <a href="https://umidjon88.github.io/just-a-simple-calculator/" target="_blank" class="portfolio-link"
+            data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Frontend Developer Portfolio (Medium) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.2s;">
+        <div class="portfolio-image">
+          <img src="images/project3.jpg" alt="Portfolio Website">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">2.</span>
+          <h3 data-i18n="project_3_title">Frontend Developer Portfolio</h3>
+          <p data-i18n="project_3_desc">Responsive portfolio website showcasing frontend development skills and
+            projects.</p>
+          <a href="https://umidjonfdev.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Mr.Hope Professional Portfolio (Medium) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.3s;">
+        <div class="portfolio-image">
+          <img src="images/project4.jpg" alt="Mr.Hope Portfolio">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">3.</span>
+          <h3 data-i18n="project_4_title">Mr.Hope Professional Portfolio</h3>
+          <p data-i18n="project_4_desc">Clean and minimal portfolio with modern design and smooth interactions.</p>
+          <a href="https://umidjon88v1.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Stroydom Construction (Medium/Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.4s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop"
+            alt="Stroydom">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">4.</span>
+          <h3 data-i18n="project_6_title">Stroydom Construction</h3>
+          <p data-i18n="project_6_desc">Professional landing page for a construction company.</p>
+          <a href="https://stroydom-24.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. About Earth Education (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.5s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+            alt="About Earth">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">5.</span>
+          <h3 data-i18n="project_7_title">About Earth Education</h3>
+          <p data-i18n="project_7_desc">Interactive educational platform about our planet.</p>
+          <a href="https://about-earth.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. YouTube Media Clone (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.6s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop"
+            alt="YouTube Clone">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">6.</span>
+          <h3 data-i18n="project_8_title">YouTube Media Clone</h3>
+          <p data-i18n="project_8_desc">A high-performance media platform clone featuring video playback, real-time
+            search, and a responsive interface.</p>
+          <a href="https://smallclone-youtube.netlify.app/" target="_blank" class="portfolio-link"
+            data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. CosmicShop E-commerce (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.7s;">
+        <div class="portfolio-image">
+          <img src="images/project1.jpg" alt="CosmicShop E-commerce">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">7.</span>
+          <h3 data-i18n="project_1_title">CosmicShop E-commerce</h3>
+          <p data-i18n="project_1_desc">Premium online store with immersive shopping experience and modern UI design.
+          </p>
+          <a href="https://umidjon88v1.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 8. ShopVibe E-commerce (Complex) -->
+      <div class="portfolio-card animate-up" style="animation-delay: 0.8s;">
+        <div class="portfolio-image">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop"
+            alt="ShopVibe">
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-number">8.</span>
+          <h3 data-i18n="project_5_title">ShopVibe E-commerce</h3>
+          <p data-i18n="project_5_desc">A premium online clothing store featuring real-time filtering and search.</p>
+          <a href="https://shopvibebyumid.netlify.app/" target="_blank" class="portfolio-link" data-i18n="view_project">
+            View Project <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="container benefits-section">
+    <h2 class="animate-up" data-i18n="benefits_title">Why Choose Me</h2>
+    <p class="section-subtitle animate-up" data-i18n="benefits_subtitle">By choosing my frontend development services,
+      you get the following
+      advantages</p>
+    <div class="benefits-grid">
+      <div class="benefit-card animate-up" style="animation-delay: 0.1s;">
+        <div class="benefit-icon"><i data-lucide="code-2"></i></div>
+        <h3 data-i18n="benefit_1_title">Clean & Scalable Code Architecture</h3>
+        <p data-i18n="benefit_1_desc">I write well-structured, readable, and maintainable code following industry best
+          practices. Every project is
+          built with scalability in mind — making future updates, team handoffs, and feature additions smooth and
+          hassle-free.</p>
+      </div>
+      <div class="benefit-card animate-up" style="animation-delay: 0.2s;">
+        <div class="benefit-icon"><i data-lucide="zap"></i></div>
+        <h3 data-i18n="benefit_2_title">Blazing-Fast Performance & Optimization</h3>
+        <p data-i18n="benefit_2_desc">I optimize every aspect of your website — from lazy loading and code splitting to
+          minification and caching
+          strategies. The result is lightning-fast load times that improve user satisfaction and boost your SEO
+          rankings.</p>
+      </div>
+      <div class="benefit-card animate-up" style="animation-delay: 0.3s;">
+        <div class="benefit-icon"><i data-lucide="smartphone"></i></div>
+        <h3 data-i18n="benefit_3_title">Fully Responsive Across All Devices</h3>
+        <p data-i18n="benefit_3_desc">Using a mobile-first approach and flexible CSS layouts (Flexbox & Grid), I build
+          interfaces that look and
+          perform flawlessly on every screen size — from the smallest phone to the largest 4K display — without
+          compromise.</p>
+      </div>
+      <div class="benefit-card animate-up" style="animation-delay: 0.4s;">
+        <div class="benefit-icon"><i data-lucide="layers"></i></div>
+        <h3 data-i18n="benefit_4_title">Modern Frameworks & Tech Stack</h3>
+        <p data-i18n="benefit_4_desc">Proficient in HTML5, CSS3, JavaScript (ES6+), React, and modern tooling like Vite
+          and Git. I leverage the
+          right technology for each project to deliver interactive, component-driven UIs that align with current
+          industry standards.</p>
+      </div>
+      <div class="benefit-card animate-up" style="animation-delay: 0.5s;">
+        <div class="benefit-icon"><i data-lucide="accessibility"></i></div>
+        <h3 data-i18n="benefit_5_title">Accessibility & Cross-Browser Compatibility</h3>
+        <p data-i18n="benefit_5_desc">I build with WCAG accessibility guidelines in mind, ensuring your site is usable
+          for everyone. Rigorous
+          cross-browser testing guarantees a consistent, polished experience across Chrome, Firefox, Safari, and Edge —
+          leaving no user behind.</p>
+      </div>
+      <div class="benefit-card animate-up" style="animation-delay: 0.6s;">
+        <div class="benefit-icon"><i data-lucide="clock"></i></div>
+        <h3 data-i18n="benefit_6_title">On-Time Delivery & Clear Communication</h3>
+        <p data-i18n="benefit_6_desc">I respect your deadlines and deliver projects on schedule. Throughout development,
+          I maintain transparent
+          communication with regular progress updates, quick response times, and dedicated post-launch support to ensure
+          your complete satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TESTIMONIALS SECTION ═══════════ -->
+  <section id="testimonials" class="container testimonials-section">
+    <h2 class="animate-up" data-i18n="testimonials_title">What My Clients Say</h2>
+    <p class="section-subtitle animate-up" data-i18n="testimonials_subtitle">Real feedback from people I've worked with
+    </p>
+
+    <div class="testimonials-slider animate-up">
+      <div class="testimonials-track" id="testimonials-track">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="t-quote">
+            <i data-lucide="quote"></i>
+          </div>
+          <p class="t-text" data-i18n="test_3_text">"Working with Umid was a breeze. He communicates clearly, delivers
+            on time, and the quality
+            of his frontend work is top-tier. Amazing experience!"</p>
+          <div class="t-user">
+            <img src="https://i.pravatar.cc/150?u=jon" alt="Jon Doe">
+            <div class="t-info">
+              <h4>Jon Doe</h4>
+              <span>CEO at TechFlow</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="t-quote">
+            <i data-lucide="quote"></i>
+          </div>
+          <p class="t-text">"The attention to detail in his code is impressive. The website he built for us is not only
+            beautiful but also very performant across all browsers."</p>
+          <div class="t-user">
+            <img src="https://i.pravatar.cc/150?u=sarah" alt="Sarah Smith">
+            <div class="t-info">
+              <h4>Sarah Smith</h4>
+              <span>Marketing Director</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="t-quote">
+            <i data-lucide="quote"></i>
+          </div>
+          <p class="t-text">"Working with Umid was a breeze. He communicates clearly, delivers on time, and the quality
+            of his frontend work is top-tier. Amazing experience!"</p>
+          <div class="t-user">
+            <img src="https://i.pravatar.cc/150?u=mike" alt="Mike Ross">
+            <div class="t-info">
+              <h4>Mike Ross</h4>
+              <span>Product Owner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-btns">
+        <button class="t-btn prev" id="t-prev"><i data-lucide="chevron-left"></i></button>
+        <button class="t-btn next" id="t-next"><i data-lucide="chevron-right"></i></button>
+      </div>
+
+      <div class="t-dots" id="t-dots"></div>
+    </div>
+  </section>
+
+  <section id="faq" class="container faq-section">
+    <h2 class="animate-up" data-i18n="faq_title">Frequently Asked Questions</h2>
+    <p class="animate-up" data-i18n="faq_subtitle">Have any questions? I'm here to answer common questions</p>
+
+    <div class="faq-container">
+      <div class="faq-left">
+        <div class="faq-item animate-up" style="animation-delay: 0.1s;">
+          <div class="faq-question">
+            <span data-i18n="faq_q1">Can you work with clients remotely?</span>
+            <button class="faq-toggle"><i data-lucide="plus"></i></button>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">Absolutely! I have experience working with clients from all around the world. Through
+              effective
+              remote communication, I ensure that every project is delivered on time and within budget.</p>
+          </div>
+        </div>
+
+        <div class="faq-item animate-up" style="animation-delay: 0.2s;">
+          <div class="faq-question">
+            <span data-i18n="faq_q2">How long does it typically take to complete a web design project?</span>
+            <button class="faq-toggle"><i data-lucide="plus"></i></button>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a2">Project timelines vary depending on complexity and requirements. A simple landing page
+              might take 1-2
+              weeks, while a full website with multiple pages could take 4-6 weeks. I'll provide a detailed timeline
+              during our initial consultation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item animate-up" style="animation-delay: 0.3s;">
+          <div class="faq-question">
+            <span data-i18n="faq_q3">Do you offer website maintenance services?</span>
+            <button class="faq-toggle"><i data-lucide="plus"></i></button>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a3">Yes! I offer ongoing maintenance and support services to ensure your website stays
+              up-to-date, secure,
+              and running smoothly. This includes updates, bug fixes, and content changes as needed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item animate-up" style="animation-delay: 0.4s;">
+          <div class="faq-question">
+            <span data-i18n="faq_q4">Can you optimize my website for search engines?</span>
+            <button class="faq-toggle"><i data-lucide="plus"></i></button>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a4">Absolutely! All websites I build follow SEO best practices including proper HTML
+              structure, meta tags,
+              fast loading times, and mobile responsiveness to help improve your search engine rankings.</p>
+          </div>
+        </div>
+
+        <div class="faq-item animate-up" style="animation-delay: 0.5s;">
+          <div class="faq-question">
+            <span data-i18n="faq_q5">Can you integrate third-party tools or platforms into my website?</span>
+            <button class="faq-toggle"><i data-lucide="plus"></i></button>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a5">Yes! I can integrate various third-party tools and platforms such as payment gateways,
+              CRM systems, email
+              marketing tools, analytics, and more to enhance your website's functionality.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-right">
+        <div class="faq-cta animate-up">
+          <div class="faq-icon">
+            <i data-lucide="help-circle"></i>
+          </div>
+          <h3 data-i18n="faq_footer_title">Still have any Questions?</h3>
+          <p data-i18n="faq_footer_desc">Feel free to contact me if you have any questions or need further
+            clarification. I'm here to help with any
+            questions you may have.</p>
+          <a href="#contact" class="btn-primary" data-i18n="contact">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="footer">
+  <div class="container footer-content">
+    <div class="footer-left">
+      <h3>Umid.</h3>
+      <p data-i18n="footer_p">Clean and minimal portfolio with modern design and smooth interactions.</p>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="about.html" data-i18n="about">About Me</a>
+        <a href="portfolio.html" data-i18n="portfolio">Portfolio</a>
+        <a href="contact.html" data-i18n="contact">Contact Me</a>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <div class="contact-item">
+        <i data-lucide="mail"></i>
+        <a href="mailto:umidjon9571@gmail.com">umidjon9571@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i data-lucide="phone"></i>
+        <a href="tel:+998882861839">+998 88 286 1839</a>
+      </div>
+      <div class="contact-item">
+        <i data-lucide="map-pin"></i>
+        <span data-i18n="label_location">Samarkand, Uzbekistan</span>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/umidjon88" target="_blank" aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/umid-ochilov-8169ba395/" target="_blank" aria-label="LinkedIn">
+        <i data-lucide="linkedin"></i>
+      </a>
+      <a href="https://t.me/HEMI_power" target="_blank" aria-label="Telegram">
+        <i data-lucide="send"></i>
+      </a>
+      <a href="https://instagram.com/um1d.abv" target="_blank" aria-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Umid. <span data-i18n="copyright">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top">
+  <i data-lucide="arrow-up"></i>
+</button>
+
+<script src="js/translations.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/home.js"></script>
+</body>
+
+</html>

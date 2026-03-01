@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Umid — Frontend Developer</title>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='44' y2='44' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%231e90ff'/%3E%3Cstop offset='100%25' stop-color='%234da6ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='44' height='44' rx='12' fill='url(%23g)'/%3E%3Cpolyline points='14,13 8,22 14,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpolyline points='30,13 36,22 30,31' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='26' y1='12' x2='18' y2='32' stroke='rgba(255,255,255,0.75)' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <meta name="description"
+    content="Get in touch with Umid for frontend development projects, collaborations, or inquiries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- intl-tel-input -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/css/intlTelInput.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<!-- Premium UI Elements -->
+<div class="loader-wrapper" id="loader">
+  <div class="loader"></div>
+</div>
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-outline" id="cursor-outline"></div>
+
+<div class="bg-slideshow" id="bg-slideshow"></div>
+<div class="bg-overlay"></div>
+<div class="noise-overlay"></div>
+
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo" id="site-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1e90ff" />
+              <stop offset="100%" stop-color="#4da6ff" />
+            </linearGradient>
+          </defs>
+          <rect width="44" height="44" rx="12" fill="url(#logoGrad)" />
+          <polyline points="14,13 8,22 14,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <polyline points="30,13 36,22 30,31" stroke="white" stroke-width="2.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <line x1="26" y1="12" x2="18" y2="32" stroke="rgba(255,255,255,0.75)" stroke-width="2.4"
+            stroke-linecap="round" />
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="about.html" data-i18n="about">About Me</a>
+        <a href="portfolio.html" data-i18n="portfolio">Portfolio</a>
+        <a href="contact.html" class="active" data-i18n="contact">Contact Me</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <span class="lang-btn active" data-lang="en">EN</span>
+          <span class="lang-btn" data-lang="ru">RU</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">
+          <i data-lucide="sun" id="sun-icon"></i>
+          <i data-lucide="moon" id="moon-icon" style="display: none;"></i>
+        </button>
+
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="mobile-menu" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo">
+      <span class="logo-text">Umid.</span>
+    </a>
+    <button id="mobile-menu-close" class="mobile-menu-close">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html" class="active">Contact Me</a>
+  </div>
+</div>
+
+<main class="contact-page">
+  <!-- HERO SECTION -->
+  <section class="container hero-contact animate-up">
+    <div class="contact-header-card">
+      <div class="header-icon">
+        <i data-lucide="message-square"></i>
+      </div>
+      <h1 data-i18n="contact_title">We'd love to hear from you.</h1>
+      <p data-i18n="contact_subtitle">Have a project in mind or just want to say hi? Feel free to reach out using the
+        form below.</p>
+
+      <div class="contact-badges-row">
+        <div class="c-badge">
+          <i data-lucide="clock"></i>
+          <span>24/7 Assistance</span>
+        </div>
+        <div class="c-badge">
+          <i data-lucide="zap"></i>
+          <span>Quick Response</span>
+        </div>
+        <div class="c-badge">
+          <i data-lucide="calendar"></i>
+          <span>Flexible Hours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="container contact-main-section">
+    <div class="contact-grid">
+      <!-- LEFT SIDE: INFO -->
+      <div class="contact-info-col animate-up">
+        <div class="info-card">
+          <div class="info-text">
+            <span class="info-label" data-i18n="label_email">You can Email Me Here</span>
+            <span class="info-value">umidjon9571@gmail.com</span>
+          </div>
+          <div class="info-arrow"><i data-lucide="arrow-right"></i></div>
+        </div>
+
+        <div class="info-card" onclick="window.open('https://www.linkedin.com/in/umid-ochilov-8169ba395/', '_blank')">
+          <div class="info-text">
+            <span class="info-label" data-i18n="social_profiles_title">Connect on LinkedIn</span>
+            <span class="info-value">Umid Ochilov</span>
+          </div>
+          <div class="info-arrow"><i data-lucide="linkedin"></i></div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-text">
+            <span class="info-label" data-i18n="label_phone">Give Me a Call on</span>
+            <span class="info-value">+998 88 286 1839</span>
+          </div>
+          <div class="info-arrow"><i data-lucide="arrow-right"></i></div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-text">
+            <span class="info-label" data-i18n="label_location">Location</span>
+            <span class="info-value">Samarkand, Uzbekistan</span>
+          </div>
+          <div class="info-arrow"><i data-lucide="arrow-right"></i></div>
+        </div>
+
+        <div class="social-profiles">
+          <h4 data-i18n="social_profiles_title">My Social Profiles</h4>
+          <div class="social-btns">
+            <a href="https://github.com/umidjon88" target="_blank"><i data-lucide="github"></i></a>
+            <a href="https://www.linkedin.com/in/umid-ochilov-8169ba395/" target="_blank"><i
+                data-lucide="linkedin"></i></a>
+            <a href="https://t.me/HEMI_power" target="_blank"><i data-lucide="send"></i></a>
+            <a href="https://instagram.com/um1d.abv" target="_blank"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: FORM -->
+      <div class="contact-form-col animate-up" style="transition-delay: 0.15s;">
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/umidjon9571@gmail.com" method="POST">
+          <!-- Hidden Fields for FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="Yangi Portfolio Xabari!">
+          <input type="text" name="_honey" style="display:none">
+          <div class="form-row">
+            <div class="input-group">
+              <label data-i18n="form_name">Full Name</label>
+              <input type="text" name="first_name" placeholder="First Name" data-i18n="form_name" required>
+            </div>
+            <div class="input-group">
+              <label data-i18n="form_name">Last Name</label>
+              <input type="text" name="last_name" placeholder="Last Name" data-i18n="form_name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label data-i18n="form_email">Email</label>
+              <input type="email" name="email" placeholder="Email Address" data-i18n="form_email" required>
+            </div>
+            <div class="input-group">
+              <label data-i18n="label_phone">Phone Number</label>
+              <input type="tel" name="phone" placeholder="Phone Number" data-i18n="label_phone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="form_interest_title">Why are you contacting us?</label>
+            <div class="checkbox-grid">
+              <label class="check-container">
+                <input type="checkbox" name="interest" value="Web Design"> <span data-i18n="interest_1">Web
+                  Design</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="check-container">
+                <input type="checkbox" name="interest" value="Collaboration"> <span
+                  data-i18n="interest_2">Collaboration</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="check-container">
+                <input type="checkbox" name="interest" value="Mobile App Design"> <span data-i18n="interest_3">Mobile
+                  App Design</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="check-container">
+                <input type="checkbox" name="interest" value="Others"> <span data-i18n="interest_4">Others</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="check-container">
+                <input type="checkbox" name="interest" value="Feedback"> <span data-i18n="interest_feedback">Feedback &
+                  Suggestions</span>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="form_message">Your Message here...</label>
+            <textarea name="message" placeholder="Your Message here..." data-i18n="form_message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary form-submit" id="submit-btn" data-i18n="form_submit">Send</button>
+          <p id="form-status" style="margin-top: 1rem; text-align: center; font-weight: 500;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="container faq-section">
+    <div class="faq-container">
+      <div class="faq-list animate-up">
+        <h2 style="text-align: left; margin-bottom: 30px;" data-i18n="faq_title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-i18n="faq_q1">Can you work with clients remotely?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">Absolutely! I have experience working with clients from all around the world through
+              effective
+              communication channels like email, video calls, and project management tools.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How long does it typically take to complete a web design project?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>The timeline varies depending on the project scope, but a standard landing page typically takes 1-2
+              weeks, while more complex applications may take longer.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer website maintenance services?</span>
+            <i data-lucide="plus" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, I offer ongoing maintenance and support to ensure your website stays up-to-date, secure, and
+              performing at its best.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-cta animate-up" style="transition-delay: 0.2s;">
+        <div class="cta-card">
+          <div class="cta-icon"><i data-lucide="star"></i></div>
+          <h3>Still have any Questions?</h3>
+          <p>Let's collaborate to create an exceptional website that sets you apart from the competition. Contact me
+            today to discuss your web design needs.</p>
+          <a href="#" class="btn-primary">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-left">
+      <h3>Umid.</h3>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+    </div>
+    <div class="footer-contact-row">
+      <div class="f-contact-pill">
+        <i data-lucide="mail"></i>
+        <span>umidjon9571@gmail.com</span>
+      </div>
+      <div class="f-contact-pill">
+        <i data-lucide="phone"></i>
+        <span>+998 88 286 1839</span>
+      </div>
+      <div class="f-contact-pill">
+        <i data-lucide="map-pin"></i>
+        <span>Samarkand, Uzbekistan</span>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://github.com/umidjon88" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+      <a href="https://www.linkedin.com/in/umid-ochilov-8169ba395/" target="_blank" aria-label="LinkedIn"><i
+          data-lucide="linkedin"></i></a>
+      <a href="https://t.me/HEMI_power" target="_blank" aria-label="Telegram"><i data-lucide="send"></i></a>
+      <a href="https://instagram.com/um1d.abv" target="_blank" aria-label="Instagram"><i
+          data-lucide="instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Umid. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top">
+  <i data-lucide="arrow-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.5.0/build/js/intlTelInput.min.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/contact.js"></script>
+</body>
+
+</html>
